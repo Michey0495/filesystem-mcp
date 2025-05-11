@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  mcp:
+    build: ./server
+    ports: ["8080:8080"]
+  gui:
+    build: ./gui
+    command: ["npm","run","tauri","dev"]
+    volumes:
+      - ./:/app
+    ports: ["1420:1420"]
